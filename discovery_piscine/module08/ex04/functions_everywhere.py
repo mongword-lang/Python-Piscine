@@ -1,0 +1,23 @@
+#!/opt/pyenv/shims/python
+
+import sys
+
+def shrink(s):
+    print(s[:8])
+
+def enlarge(s):
+    while len(s) < 8:
+        s += "Z"
+    print(s)
+
+if len(sys.argv) - 1 == 0:
+   print("none")
+else:
+    for arg in sys.argv[1:]:
+        if len(arg) > 8:
+            shrink(arg)
+        elif len(arg) < 8:
+            enlarge(arg)
+        else:
+           print(arg)
+        
